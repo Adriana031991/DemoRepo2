@@ -23,8 +23,7 @@ public class BasicCalculator {
     }
 
     public Long division(Long number1, Long number2) {
-        /*logger.info( "Resting {} / {}", number1, number2 );
-        return number1 / number2;*/
+        
         try {
             logger.info( "Resting {} / {}", number1, number2 );
             return number1 / number2;
