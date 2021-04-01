@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BasicCalculatorTest {
 
-    private final  BasicCalculator basicCalculator = new BasicCalculator();
+    private final BasicCalculator basicCalculator = new BasicCalculator();
 
     /*@Test
     @DisplayName("Testing suma 1+1 = 2")
@@ -56,7 +56,7 @@ class BasicCalculatorTest {
             "22, 10, 12",
             "15, 30, -15"
     })
-    public void severalRest(Long first, Long second, Long expectedResult){
+    public void severalRest(Long first, Long second, Long expectedResult) {
         assertEquals(expectedResult, basicCalculator.rest(first, second),
                 () -> first + "-" + second + "should equal" + expectedResult);
     }
@@ -70,28 +70,50 @@ class BasicCalculatorTest {
             "22, 10, 220",
             "9, 9, 81"
     })
-    public void severalMultip(Long first, Long second, Long expectedResult){
+    public void severalMultip(Long first, Long second, Long expectedResult) {
         assertEquals(expectedResult, basicCalculator.multipl(first, second),
                 () -> first + "*" + second + "should equal" + expectedResult);
     }
 
     //@Test
     @ParameterizedTest(name = "{0} / {1} = {2}")
-    @DisplayName("Testing several Division")
+    @DisplayName("Testing several Division when dividend is zero")
 
     @CsvSource({
-            "2, 1, 2",
-            "100, 5, 20",
-            "1, 1, 1",
+            "2, 0, 2",
+            "100, 0, 20",
+            "1, 0, 1",
             "55, 0, 0"
     })
 
-    public void severalDivision(Long first, Long second, Long expectedResult){
+    public void severalDivisionDividendZero(Long first, Long second) {
+//excepcion que toma cuando divide por 0.. la estructura puede usarse para otras validaciones
+        //cuando la division es incorrecta
+        assertThrows(RuntimeException.class, () -> {
+            basicCalculator.division(first, second);
+        });
+        //assertEquals(expectedResult, basicCalculator.division(first, second),
+//                () -> first + "/" + second + "should equal" + expectedResult);
+    }
+
+    @ParameterizedTest(name = "{0} / {1} = {2}")
+    @DisplayName("Testing several Division")
+//cuando la division es correcta
+    @CsvSource({
+            "2, 1, 2",
+            "100, 2, 50",
+            "40, 4, 10",
+            "80, 10, 8"
+    })
+
+    public void severalDivision(Long first, Long second, Long expectedResult) {
 
         assertEquals(expectedResult, basicCalculator.division(first, second),
                 () -> first + "/" + second + "should equal" + expectedResult);
-
     }
 
-    }
+
+
+
+}
 
