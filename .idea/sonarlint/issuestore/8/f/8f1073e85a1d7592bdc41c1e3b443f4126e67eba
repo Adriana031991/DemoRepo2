@@ -1,0 +1,9 @@
+
+G
+java:S1068"*Remove this unused "logger" private field.(ƒÃÐñ8ãŸ¶Äˆ/
+Z	java:S106("9Replace this use of System.out or System.err by a logger.(¤†•»üÿÿÿÿ8„Õ‡Èˆ/
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(Í©†¨þÿÿÿÿ8ãŸ¶Äˆ/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(÷°¨´øÿÿÿÿ8ãŸ¶Äˆ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ñ‚¯—8ãŸ¶Äˆ/
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(³×Ïóùÿÿÿÿ8„Õ‡Èˆ/
+U	java:S106)"9Replace this use of System.out or System.err by a logger.(¢”»“8„Õ‡Èˆ/
